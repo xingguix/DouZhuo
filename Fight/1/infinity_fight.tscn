@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://g648dg76v38c"]
+
+[ext_resource type="PackedScene" uid="uid://yl7x0vt7g0fg" path="res://Fight/1/fight.tscn" id="1_0igl4"]
+
+[node name="InfinityFight" instance=ExtResource("1_0igl4")]
+infinity_mode = true

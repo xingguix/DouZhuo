@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cospnqery554"]
+
+[ext_resource type="PackedScene" uid="uid://baokt3ixer6p" path="res://Player/player.tscn" id="1_b7j60"]
+[ext_resource type="Script" path="res://Test/test.gd" id="1_pveyj"]
+[ext_resource type="PackedScene" uid="uid://cfk1fb8cetnmb" path="res://Bullet/bullet.tscn" id="2_wpiih"]
+[ext_resource type="PackedScene" uid="uid://krqw6spboiwa" path="res://Bullet/bullet_summon.tscn" id="3_b8y30"]
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_pveyj")
+
+[node name="Bullet" parent="." instance=ExtResource("2_wpiih")]
+position = Vector2(390, 67)
+velocity = Vector2(0, 10)
+
+[node name="Player" parent="." instance=ExtResource("1_b7j60")]
+position = Vector2(404, 352)
+
+[node name="BulletSummon" parent="." instance=ExtResource("3_b8y30")]

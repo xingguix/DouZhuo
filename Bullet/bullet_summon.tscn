@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://krqw6spboiwa"]
+
+[ext_resource type="Script" path="res://Bullet/bullet_summon.gd" id="1_65s5o"]
+
+[node name="BulletSummon" type="Node2D"]
+script = ExtResource("1_65s5o")

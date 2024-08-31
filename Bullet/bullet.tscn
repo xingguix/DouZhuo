@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfk1fb8cetnmb"]
+
+[ext_resource type="Script" path="res://Bullet/bullet.gd" id="1_jjs1e"]
+[ext_resource type="Texture2D" uid="uid://b00ffwww7s1mp" path="res://Bullet/大拇指.png" id="1_rl2jo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mkdlu"]
+radius = 55.0
+height = 178.0
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_jjs1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.0658915, 0.0658915)
+texture = ExtResource("1_rl2jo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mkdlu")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(9.5, 5.7)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

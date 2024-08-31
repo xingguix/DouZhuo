@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://qenjr083oyy1"]
+
+[ext_resource type="PackedScene" uid="uid://cfk1fb8cetnmb" path="res://Bullet/bullet.tscn" id="1_rb0aa"]
+[ext_resource type="Script" path="res://Bullet/track_bullet.gd" id="2_1ylpu"]
+
+[node name="TrackBullet" instance=ExtResource("1_rb0aa")]
+script = ExtResource("2_1ylpu")
+speed = 4.0

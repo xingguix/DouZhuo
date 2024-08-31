@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://tbs3d5r167v0"]
+
+[ext_resource type="Script" path="res://Fight/FightBox/fight_box.gd" id="1_7xfxn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlyxd"]
+bg_color = Color(0.192157, 0.192157, 0.192157, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhmkl"]
+size = Vector2(1130, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6mb3"]
+size = Vector2(18.5, 665)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fvey"]
+size = Vector2(302, 132)
+
+[node name="FightBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7xfxn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.205729
+anchor_top = 0.274074
+anchor_right = 0.794271
+anchor_bottom = 0.898148
+offset_bottom = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jlyxd")
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/StaticBody2D"]
+position = Vector2(564, 9.5)
+shape = SubResource("RectangleShape2D_rhmkl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Panel/StaticBody2D"]
+position = Vector2(563, 660)
+shape = SubResource("RectangleShape2D_rhmkl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Panel/StaticBody2D"]
+position = Vector2(10, 336)
+shape = SubResource("RectangleShape2D_j6mb3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Panel/StaticBody2D"]
+position = Vector2(1119.75, 338.5)
+shape = SubResource("RectangleShape2D_j6mb3")
+
+[node name="说" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 413.0
+offset_top = 93.0
+offset_right = 716.0
+offset_bottom = 228.0
+
+[node name="Label" type="Label" parent="Panel/说"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "说：生日快乐！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area" type="Area2D" parent="Panel/说"]
+position = Vector2(151, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/说/Area"]
+shape = SubResource("RectangleShape2D_7fvey")
+
+[connection signal="body_entered" from="Panel/说/Area" to="." method="_on_说_body_entered"]
