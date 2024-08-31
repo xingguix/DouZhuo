@@ -3,6 +3,7 @@ extends Control
 signal speak
 
 @onready var speak_area: Panel = $Panel/说
+@onready var charge_player_2d: AudioStreamPlayer2D = $ChargePlayer2D
 
 func _on_说_body_entered(body: Node2D) -> void:
 	if not speak_area.visible:
@@ -13,3 +14,4 @@ func _on_说_body_entered(body: Node2D) -> void:
 
 func show_option():
 	speak_area.show()
+	charge_player_2d.play()

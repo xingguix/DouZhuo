@@ -5,7 +5,6 @@ extends Control
 @onready var player: Player = $Player
 @onready var dou: Node2D = $Dou
 @onready var fight_box: Control = $FightBox
-@onready var charge_player_2d: AudioStreamPlayer2D = $ChargePlayer2D
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var dead_panel: Panel = $DeadPanel
 @export var infinity_mode: bool = false
@@ -38,7 +37,6 @@ func level():
 				await animation_player.animation_finished
 				animation_player.play("out_to_center")
 				await animation_player.animation_finished
-		charge_player_2d.play()
 		fight_box.show_option()
 		await fight_box.speak
 		await create_tween().tween_interval(2).finished
@@ -75,6 +73,7 @@ func infinity():
 	get_tree().change_scene_to_file("res://Fight/2/fight_2.tscn")
 
 func _ready() -> void:
+	dou.start_to_float()
 	music_player.change_to("fight1")
 	if infinity_mode:
 		infinity()

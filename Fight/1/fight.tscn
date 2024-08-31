@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://yl7x0vt7g0fg"]
+[gd_scene load_steps=19 format=3 uid="uid://yl7x0vt7g0fg"]
 
 [ext_resource type="Script" path="res://Fight/1/fight.gd" id="1_to1gi"]
 [ext_resource type="PackedScene" uid="uid://tbs3d5r167v0" path="res://Fight/FightBox/fight_box.tscn" id="2_llh0o"]
 [ext_resource type="PackedScene" uid="uid://baokt3ixer6p" path="res://Player/player.tscn" id="3_pfqy7"]
 [ext_resource type="PackedScene" uid="uid://krqw6spboiwa" path="res://Bullet/bullet_summon.tscn" id="4_po0cc"]
 [ext_resource type="PackedScene" uid="uid://b3glowdvmtpd" path="res://Dou/dou.tscn" id="6_3idll"]
-[ext_resource type="AudioStream" uid="uid://bxem1h3hodl4f" path="res://Fight/1/charge.mp3" id="7_t6l12"]
 [ext_resource type="PackedScene" uid="uid://cs7y74aftdiei" path="res://Fight/dead.tscn" id="8_50kqw"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="8_5134k"]
 [ext_resource type="Script" path="res://Fight/1/music_player.gd" id="9_xou63"]
@@ -295,9 +294,6 @@ layout_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_dbvy0")
 }
-
-[node name="ChargePlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_t6l12")
 
 [node name="DeadPanel" parent="." instance=ExtResource("8_50kqw")]
 visible = false
