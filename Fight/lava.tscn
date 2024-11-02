@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://drqxbxdisnujn"]
+
+[ext_resource type="Script" path="res://Fight/2/lava.gd" id="1_pic83"]
+[ext_resource type="Texture2D" uid="uid://bx1hbxktawg8k" path="res://Fight/2/lava.png" id="2_5n0b1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_giebe"]
+size = Vector2(1118, 147)
+
+[node name="Lava" type="Area2D"]
+script = ExtResource("1_pic83")
+
+[node name="LavaSprite" type="Sprite2D" parent="."]
+position = Vector2(-4.99997, -3.05176e-05)
+scale = Vector2(7, 1.5625)
+texture = ExtResource("2_5n0b1")
+offset = Vector2(0, -47.9999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -74.5)
+shape = SubResource("RectangleShape2D_giebe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

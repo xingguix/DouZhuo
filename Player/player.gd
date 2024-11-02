@@ -47,6 +47,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	move_and_slide()
 
+func is_dead() -> bool:
+	if health <= 0:
+		return true
+	return false
+
 func stop_jump_buffer():
 	jump_buffer = false
 

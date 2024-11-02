@@ -22,3 +22,15 @@ func _ready() -> void:
 	await fight_box.speak
 	dou.hit(20)
 	animation_player.play("floor_lava")
+	await animation_player.animation_finished
+	animation_player.play("fight2_2")
+	await animation_player.animation_finished
+	if player.is_dead():
+		return
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("debug"):
+		if animation_player.speed_scale != 1:
+			animation_player.speed_scale = 1
+		else:
+			animation_player.speed_scale = 10
