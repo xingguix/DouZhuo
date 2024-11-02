@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dseyydbw3w60v"]
+
+[ext_resource type="Texture2D" uid="uid://bgavl5x0dxr15" path="res://Hacker/Hacker.png" id="1_lo7yb"]
+[ext_resource type="Script" path="res://Hacker/hacker.gd" id="1_osvtw"]
+[ext_resource type="Script" path="res://Hacker/VoicePlayer.gd" id="3_31ltc"]
+
+[sub_resource type="Gradient" id="Gradient_vxo5p"]
+
+[node name="Hacker" type="Node2D"]
+script = ExtResource("1_osvtw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5.125, 5.125)
+texture = ExtResource("1_lo7yb")
+
+[node name="VoicePlayer" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("3_31ltc")
+
+[node name="Trailer" type="CPUParticles2D" parent="."]
+rotation = -1.5708
+amount = 200
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, -980)
+initial_velocity_max = 100.0
+angular_velocity_min = -300.0
+angular_velocity_max = 300.0
+scale_amount_min = 30.0
+scale_amount_max = 60.0
+color = Color(0.162066, 0.162066, 0.162066, 1)
+color_initial_ramp = SubResource("Gradient_vxo5p")

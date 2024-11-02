@@ -27,6 +27,7 @@ func _ready() -> void:
 	await animation_player.animation_finished
 	if player.is_dead():
 		return
+	animation_player.play("HackerAppear")
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug"):
