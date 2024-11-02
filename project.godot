@@ -22,7 +22,7 @@ config/icon="res://Dou/头.png"
 
 [autoload]
 
-DouInfo="*res://auto_load/dou_info.gd"
+Info="*res://auto_load/info.gd"
 
 [display]
 

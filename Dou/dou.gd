@@ -16,7 +16,7 @@ func start_to_float():
 	tween.set_loops()
 
 func hit(damage: int):
-	DouInfo.health -= damage
+	Info.dou_health -= damage
 	audio_stream_player_2d.play()
 
 func stop():

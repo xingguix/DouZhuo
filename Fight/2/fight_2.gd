@@ -4,13 +4,21 @@ extends Control
 @onready var music_player: AudioStreamPlayer2D = $MusicPlayer
 @onready var dou: Dou = $Dou
 @onready var fight_box: Control = $FightBox
+@onready var jump_button: TouchScreenButton = $JumpButton
+@onready var player: Player = $Player
+@onready var health_bar: ProgressBar = $HealthBar
 
 func _ready() -> void:
+	player.load_health()
+	Info.dou_health = 100
+	# 手动更新一下
 	animation_player.play("place_earth")
 	await animation_player.animation_finished
+	jump_button.show()
 	music_player.change_to("fight2")
 	animation_player.play("place_platform")
 	await animation_player.animation_finished
 	animation_player.play("fight2_first")
 	await fight_box.speak
 	dou.hit(20)
+	animation_player.play("floor_lava")

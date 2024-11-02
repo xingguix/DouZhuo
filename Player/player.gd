@@ -4,18 +4,24 @@ class_name Player extends CharacterBody2D
 signal health_changed(health: int)
 
 @onready var player_sprite: PlayerSprite = $PlayerSprite
+
 @onready var hit_player: AudioStreamPlayer2D = $HitPlayer
+@onready var heal_player: AudioStreamPlayer2D = $HealPlayer
+
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") / 10
-var health: int = 100
+@export var max_health: int = 100
+@export var health: int = 100
 var jump_buffer: bool = false
 var invincible: bool = false
 @export var gravity_scale: float = 0
 @export var speed = 600.
 @export var jump_height = -1200.
 
+
 func _physics_process(delta: float) -> void:
+	save_health()
 	var x_direction := Input.get_axis("left","right")
 	var y_direction := Input.get_axis("up","down")
 	if is_on_floor():
@@ -59,4 +65,16 @@ func hit(damage: int, invincible_time: float = 1.5):
 	hit_player.play()
 	player_sprite.hit(invincible_time)
 	start_invincible(invincible_time)
-	
+
+func heal(value: int):
+	health += value
+	health = clamp(health, 0, max_health)
+	emit_signal("health_changed", health)
+	heal_player.play()
+
+func save_health():
+	Info.player_health = health
+
+func load_health():
+	health = Info.player_health
+	emit_signal("health_changed", health)

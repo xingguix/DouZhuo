@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://baokt3ixer6p"]
+[gd_scene load_steps=9 format=3 uid="uid://baokt3ixer6p"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_52eoh"]
 [ext_resource type="Texture2D" uid="uid://cct7s54psgx5f" path="res://Player/default.png" id="2_rsp6c"]
 [ext_resource type="Texture2D" uid="uid://behnfomuxl713" path="res://Player/hit.png" id="3_fwll2"]
 [ext_resource type="Script" path="res://Player/player_sprite.gd" id="3_twlc7"]
 [ext_resource type="AudioStream" uid="uid://bjon7kj1e5ni1" path="res://Player/叫唤.ogg" id="5_66k1q"]
+[ext_resource type="AudioStream" uid="uid://filblpekppip" path="res://Bear/heal.mp3" id="6_7nrp3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgvey"]
 radius = 30.0
@@ -42,6 +43,9 @@ script = ExtResource("3_twlc7")
 
 [node name="HitPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_66k1q")
+
+[node name="HealPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7nrp3")
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
 wait_time = 0.1

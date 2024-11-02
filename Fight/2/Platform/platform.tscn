@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://Fight/2/Platform/platform.gd" id="1_q2fjt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb3r7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2i60"]
+size = Vector2(240, 52)
 
 [node name="TextPlatform" type="AnimatableBody2D"]
 script = ExtResource("1_q2fjt")
@@ -26,4 +27,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bb3r7")
+shape = SubResource("RectangleShape2D_w2i60")
